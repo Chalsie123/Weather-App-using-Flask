@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    <title>Weather - {{city_id}}</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container my-3">
+    <table class="table table-striped-columns" style="width:60%">
+{% if weather|length==0 %}
+<div class="alert alert-dark", role="alert">
+    Cannot retrieve Data at the Moment. Retry Again After few Minutes
+</div>
+{% else %}
+<h2 >Weather Conditions according to your Current City - {{city_name}}</h2>
+{% for i, j in weather.items() %}
+    <tr>
+      <th padding="5px">{{i}}</th>
+      <td>{{j}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endif %}
+
+{% endblock body %}
