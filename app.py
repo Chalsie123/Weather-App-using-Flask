@@ -6,7 +6,7 @@ import flag
 import config
 
 app = Flask(__name__)
-api_key = config.api_key
+api_key = Your API Key
 
 weather = {}
 
